@@ -6,6 +6,7 @@ var TestUtils = require('react-addons-test-utils');
 
 var TodoList = require('TodoList');
 var TodoSearch = require('TodoSearch');
+var TodoApp = require('TodoApp');
 
 
 describe('TodoSearch', () => {
@@ -25,14 +26,5 @@ describe('TodoSearch', () => {
 
 	});
 
-	it('Should call onSearch with proper checked value', () => {
-		var checked = true;
-		var spy = expect.createSpy();
-		var todoSearch = TestUtils.renderIntoDocument(<TodoSearch onSearch={spy} />);
-
-		todoSearch.refs.showCompleted.checked = checked;
-		TestUtils.Simulate.change(todoSearch.refs.showCompleted);
-
-		expect(spy).toHaveBeenCalledWith(true, '');
-	});
-})
+	
+});
